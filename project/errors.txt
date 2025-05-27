@@ -1,0 +1,11 @@
+p2/read.c: In function ‘main’:
+p2/read.c:107:31: warning: passing argument 1 of ‘strip_newline’ discards ‘const’ qualifier from pointer target type [-Wdiscarded-qualifiers]
+  107 |             strip_newline(word[i]);
+      |                           ~~~~^~~
+In file included from p2/read.c:6:
+p2/../include/asm.h:51:26: note: expected ‘char *’ but argument is of type ‘const char *’
+   51 | void strip_newline(char *str);
+      |                    ~~~~~~^~~
+p2/read.c:16:9: warning: unused variable ‘addres’ [-Wunused-variable]
+   16 |     int addres = 0;
+      |         ^~~~~~

@@ -1,0 +1,30 @@
+æœªå®šç¾©file format
+­˜ûöU Í˜ûöU
+(null) Í˜ûöU
+of section
+™ûöU í˜ûöU
+<ascii>: <ascii>:
+clrl %sp@
+bras 24
+clrw %d0
+bnes 6
+clrw %a0@
+nop 3c:4e71
+Í˜ûöU ûöU
+<my_printf>: <my_printf>:
+fe00 lea
+nop 60:4e71
+0200 lea
+]ûöU ]ûöU
+<main>: 00000068
+moveq #2,%d0
+moveq #1,%d0
+moveq #0,%d0
+Í˜ûöU ıûöU
+<my_add>: <my_add>:
+Í˜ûöU Í˜ûöU
+<print_ascii>: 00000096
+Í˜ûöU İûöU
+<print_loop>: <print_loop>:
+^¢ûöU =¢ûöU
+<end_print>: end_print
