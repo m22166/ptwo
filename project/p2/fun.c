@@ -8,7 +8,7 @@
 int SP_offset = 0;
 
 void soures(char *word, char *out) {
-    printf("\n%s", word);
+    // printf("\n%s", word);
     FILE *file = fopen("lavel2.txt", "a");
     if (!file) {
         perror("fopen");
@@ -56,7 +56,7 @@ void soures(char *word, char *out) {
         // case %a@(n)
         // add #n,%a@
         if (isdigit(sou[4])) {
-            printf("\n%c", sou[4]);
+            // printf("\n%c", sou[4]);
             char buff[1024] = "";
             char buff2[1024] = "";
             int reg = pare(sou);
@@ -161,7 +161,7 @@ void soures(char *word, char *out) {
             strcat(buff4, "\n");
             strcat(buff4, out);
             strcpy(out, buff4);
-            printf("%s\n", out);
+            // printf("%s\n", out);
         }
     }
     strcat(out, "\n\t");
@@ -257,7 +257,7 @@ void JMP(char *word, char *out) {
     strcat(out, temp);
     strcat(out, ">\n");
     fprintf(file, out);
-    printf("\n%s\n", out);
+    // printf("\n%s\n", out);
 
     fclose(file);
 }
@@ -278,7 +278,7 @@ void JSR(char *word, char *out) {
     strcat(out, "> ");
     strcat(out, "00011\n");
     fprintf(file, out);
-    printf("\n%s\n", out);
+    // printf("\n%s\n", out);
 
     fclose(file);
 }

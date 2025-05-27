@@ -1,14 +1,14 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
 #include "../include/asm.h"
 
 int is_blank_line(const char *line) {
     for (int i = 0; line[i] != '\0'; i++) {
         if (!isspace((unsigned char)line[i])) {
-            return 0; 
+            return 0;
         }
     }
     return 1;
@@ -37,9 +37,6 @@ void deline() {
     fclose(file);
 }
 
-
-
-
 void extract_labels(LabelInfo labels[MAX_LINES]) {
     FILE *file = fopen("lavel2.txt", "r");
     if (!file) {
@@ -49,7 +46,7 @@ void extract_labels(LabelInfo labels[MAX_LINES]) {
 
     char line[256];
     int line_count = 0;
-    
+
     int label_count = 0;
 
     while (fgets(line, sizeof(line), file)) {
@@ -64,7 +61,7 @@ void extract_labels(LabelInfo labels[MAX_LINES]) {
 
                 strncpy(labels[label_count].label, start + 1, len);
                 labels[label_count].label[len] = '\0';
-                labels[label_count].line_number = line_count -1 -label_count;
+                labels[label_count].line_number = line_count - 1 - label_count;
                 label_count++;
             }
         }
@@ -74,9 +71,9 @@ void extract_labels(LabelInfo labels[MAX_LINES]) {
     fclose(file);
 
     // 出力
-    printf("抽出されたラベル:\n");
+    // printf("抽出されたラベル:\n");
     for (int i = 0; i < label_count; ++i) {
-        printf("行 %d: <%s>\n", labels[i].line_number, labels[i].label);
+        // printf("行 %d: <%s>\n", labels[i].line_number, labels[i].label);
     }
 }
 int hex_to_int(const char *hex) {
@@ -118,19 +115,19 @@ void replace_labels_with_lines(LabelInfo labels[]) {
             }
             // ラベルを探して数値に変換
             int found = 0;
-            
+
             for (int i = 0; i < MAX_LINES; i++) {
                 if (strcmp(label, labels[i].label) == 0) {
                     char replaced_line[256];
                     int value = labels[i].line_number + offset;
                     *start = '\0';  // ラベル前の部分を切り出す
-    strcat(output,"\t");
-                    	
+                    strcat(output, "\t");
+
                     for (int i = 15; i >= 0; i--) {
-		                    sprintf(replaced_line, "%d", (value >> i) & 1);
-		                    strcat(output, replaced_line);
-	                    }      
-                    strcat(output,"\n");              
+                        sprintf(replaced_line, "%d", (value >> i) & 1);
+                        strcat(output, replaced_line);
+                    }
+                    strcat(output, "\n");
                     found = 1;
                     break;
                 }
@@ -139,8 +136,7 @@ void replace_labels_with_lines(LabelInfo labels[]) {
             if (!found) {
                 // 一致しないラベル → そのまま追加
                 strcat(output, line);
-                printf("%s",label);
-
+                // printf("%s",label);
             }
 
         } else {
@@ -160,9 +156,8 @@ void replace_labels_with_lines(LabelInfo labels[]) {
 
     fputs(output, file);
     fclose(file);
-    printf("ラベルを行番号に置き換えました。\n");
+    // printf("ラベルを行番号に置き換えました。\n");
 }
-
 
 void declon() {
     FILE *file = fopen("lavel2.txt", "r");
