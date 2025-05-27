@@ -1,8 +1,8 @@
 æœªå®šç¾©file format
-í®õFV Ý õFV
-í®õFV (null)
+Ç£ª«hU Ç¡ª«hU
+Ç£ª«hU (null)
 of section
- õFV ½ õFV
+‡¡ª«hU ç¡ª«hU
 <ascii>: (null)
 clrl %sp@
 bras 24
@@ -10,21 +10,18 @@ clrw %d0
 bnes 6
 clrw %a0@
 nop 3c:4e71
- }¡õFV
+ §¡ª«hU
 <my_printf>: (null)
 fe00 lea
 nop 60:4e71
 0200 lea
  
 <main>: (null)
-moveq #2,%d0
-moveq #1,%d0
-moveq #0,%d0
- ¡õFV
+ ‡ ª«hU
 <my_add>: (null)
  
 <print_ascii>: (null)
-Ý õFV ½¡õFV
+Ç¡ª«hU ç ª«hU
 <print_loop>: (null)
-=¦õFV ]¦õFV
+g¯ª«hU G¯ª«hU
 <end_print>: (null)
