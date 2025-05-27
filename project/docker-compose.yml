@@ -3,10 +3,6 @@ services:
   dev:
     build: .
     volumes:
-      - ./src/ascii.c:/ptow/src/ascii.c
-      - ./src/test.asm:/ptow/src/test.asm
-      - ./p2:/ptow/p2
-      - ./include:/ptow/include
-      - ./makefile:/ptow/makefile
+      - ./
     working_dir: /ptow
     tty: true
