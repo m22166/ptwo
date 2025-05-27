@@ -3,6 +3,6 @@ services:
   dev:
     build: .
     volumes:
-      - ./
+      - ./:/ptow/
     working_dir: /ptow
     tty: true
