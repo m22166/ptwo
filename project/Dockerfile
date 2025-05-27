@@ -20,6 +20,11 @@ RUN eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && \
     brew update && \
     brew install m68k-elf-gcc
 
+RUN mkdir -p /ptow/build
+COPY linker.ld /ptow/linker.ld
+COPY src/test.asm /ptow/src/test.asm
+
+
 WORKDIR /ptow
 
 CMD ["/bin/bash"]
